@@ -1,0 +1,6 @@
+Debug
+Release
+*.VC.db
+*.suo
+test_package/build
+*.pyc
