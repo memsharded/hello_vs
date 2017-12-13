@@ -1,4 +1,4 @@
-from conans import ConanFile, tools, MSBuild
+from conans import ConanFile, MSBuild
 
 
 class HelloConan(ConanFile):
