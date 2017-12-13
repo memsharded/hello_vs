@@ -1,4 +1,4 @@
-from conans import ConanFile, tools
+from conans import ConanFile, tools, MSBuild
 
 
 class HelloConan(ConanFile):
@@ -10,8 +10,8 @@ class HelloConan(ConanFile):
     exports_sources = "src/*", "build/*"
 
     def build(self):
-        cmd = tools.msvc_build_command(self.settings, "build/HelloLib/HelloLib.sln")
-        self.run(cmd)
+        msbuild = MSBuild(self)
+        msbuild.build("build/HelloLib/HelloLib.sln")
 
     def package(self):
         self.copy("*.h", dst="include", src="src")
