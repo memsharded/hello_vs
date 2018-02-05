@@ -5,6 +5,7 @@ class HelloConan(ConanFile):
     name = "Hello"
     version = "0.1"
     license = "MIT"
+    description = "DLLs for Hello and Bye"
     url = "https://github.com/memsharded/hello_vs"
     settings = "os", "compiler", "build_type", "arch"
     exports_sources = "src/*", "build/*"
@@ -19,4 +20,4 @@ class HelloConan(ConanFile):
         self.copy("*.dll", dst="bin", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["HelloLib"]
+        self.cpp_info.libs = ["HelloLib", "ByeLib"]
