@@ -7,7 +7,7 @@ class HelloConan(ConanFile):
     license = "MIT"
     url = "https://github.com/memsharded/hello_vs"
     settings = "os", "compiler", "build_type", "arch"
-    exports_sources = "src/*", "build/*"
+    exports_sources = "src/*", "build/*.vcxproj*", "build/*.sln*"
 
     def build(self):
         msbuild = MSBuild(self)
